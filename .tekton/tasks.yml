@@ -11,3 +11,12 @@ spec:
         echo "Cleaning up workspace..."
         rm -rf /workspace/*
         echo "Cleanup complete!"
+- name: nose-test
+  image: python:3.10
+  script: |
+    #!/bin/bash
+    echo "Running Nose tests..."
+    pip install nose
+    nosetests tests/
+    echo "Nose tests completed!"
+
